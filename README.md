@@ -1,4 +1,4 @@
-# 📰 Real-Time News Dashboard
+# 📰 PulseNews — Real-Time News Aggregation Dashboard 
 
 A responsive **React.js news application** that fetches and displays the latest news articles in real time using the **News API**.  
 Built with **React Hooks**, **React Router**, and a clean responsive UI, it allows users to browse news by categories with seamless navigation.
