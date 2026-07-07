@@ -20,7 +20,7 @@ const Navbar = ({ setCategory }) => {
           href="#"
           onClick={(e) => e.preventDefault()}
         >
-          <span className="badge bg-light text-dark fs-4">NewsMag</span>
+          <span className="badge bg-light text-dark fs-4">PulseNews</span>
         </a>
         <button
           className="navbar-toggler"
