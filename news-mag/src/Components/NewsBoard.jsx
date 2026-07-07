@@ -16,9 +16,22 @@ const NewsBoard = ({ category }) => {
       : `/api/news?category=${encodeURIComponent(category)}`;
 
     fetch(url)
-      .then((response) => {
+      .then(async (response) => {
         if (!response.ok) {
-          throw new Error(`Error: ${response.status}`);
+          let serverMessage = "";
+
+          try {
+            const payload = await response.json();
+            serverMessage = payload?.error || payload?.message || "";
+          } catch {
+            serverMessage = "";
+          }
+
+          throw new Error(
+            serverMessage
+              ? `Error: ${response.status} - ${serverMessage}`
+              : `Error: ${response.status}`,
+          );
         }
         return response.json();
       })

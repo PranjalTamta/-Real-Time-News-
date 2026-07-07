@@ -1,9 +1,11 @@
 export default async function handler(req, res) {
   const category = req.query.category || "general";
-  const apiKey = process.env.NEWS_API_KEY;
+  const apiKey = process.env.NEWS_API_KEY || process.env.VITE_API_KEY;
 
   if (!apiKey) {
-    return res.status(500).json({ error: "Server is missing NEWS_API_KEY." });
+    return res.status(500).json({
+      error: "Server is missing NEWS_API_KEY (or VITE_API_KEY).",
+    });
   }
 
   try {
