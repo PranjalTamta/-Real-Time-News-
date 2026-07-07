@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Navbar = ({ setCategory }) => {
   const categories = [
     "technology",
@@ -48,6 +50,10 @@ const Navbar = ({ setCategory }) => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  setCategory: PropTypes.func.isRequired,
 };
 
 export default Navbar;

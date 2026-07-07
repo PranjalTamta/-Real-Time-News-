@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import NewsItem from "./NewsItem";
 
 const NewsBoard = ({ category }) => {
@@ -44,6 +45,10 @@ const NewsBoard = ({ category }) => {
         : !error && <p className="text-center">No news available.</p>}
     </div>
   );
+};
+
+NewsBoard.propTypes = {
+  category: PropTypes.string.isRequired,
 };
 
 export default NewsBoard;
